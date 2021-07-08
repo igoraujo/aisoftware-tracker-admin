@@ -1,5 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aisoftware.Tracker.Borders\Aisoftware.Tracker.Borders.csproj" />
+    <ProjectReference Include="..\Aisoftware.Tracker.Repositories\Aisoftware.Tracker.Repositories.csproj" />
+  </ItemGroup>
+  
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
