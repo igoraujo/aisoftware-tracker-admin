@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Aisoftware.Tracker.Models.ViewModels;
+using Aisoftware.Tracker.Borders.ViewModels;
 using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 

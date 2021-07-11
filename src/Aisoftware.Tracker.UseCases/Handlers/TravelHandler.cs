@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Aisoftware.Tracker.Models;
+using Aisoftware.Tracker.Borders;
 using System.Web;
 using Aisoftware.Tracker.UseCases.Tools;
 using Server.Tools;
-using Aisoftware.Tracker.Models.ViewModels;
+using Aisoftware.Tracker.Borders.ViewModels;
 
 namespace Aisoftware.Tracker.UseCases.Handlers
 {

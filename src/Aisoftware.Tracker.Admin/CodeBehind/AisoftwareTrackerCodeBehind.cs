@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Aisoftware.Tracker.Models;
+using Aisoftware.Tracker.Borders;
 using Aisoftware.Tracker.UseCases.Handlers;
 using System;
 using System.Collections.Generic;

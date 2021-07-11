@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using System;
-using Aisoftware.Tracker.Models;
+using Aisoftware.Tracker.Borders;
 using System.Data;
 using Npgsql;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ using System.Data.Common;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
 using System.IO;
-using Aisoftware.Tracker.Models.ViewModels;
+using Aisoftware.Tracker.Borders.ViewModels;
 
 namespace Aisoftware.Tracker.UseCases
 {

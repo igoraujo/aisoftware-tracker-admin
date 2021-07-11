@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aisoftware.Tracker.Models
+namespace Aisoftware.Tracker.Borders
 {
     public class Balance
     {

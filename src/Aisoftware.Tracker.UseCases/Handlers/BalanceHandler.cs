@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Aisoftware.Tracker.Models;
+using Aisoftware.Tracker.Borders;
 
 namespace Aisoftware.Tracker.UseCases.Handlers
 {

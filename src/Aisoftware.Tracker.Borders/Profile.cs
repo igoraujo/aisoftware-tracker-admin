@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Aisoftware.Tracker.Models
+namespace Aisoftware.Tracker.Borders
 {
     public class Profile
     {

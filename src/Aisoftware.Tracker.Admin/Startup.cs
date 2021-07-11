@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Aisoftware.Tracker.Models;
+using Aisoftware.Tracker.Borders;
 using Aisoftware.Tracker.UseCases;
 using Aisoftware.Tracker.UseCases.Handlers;
 using System.Globalization;
