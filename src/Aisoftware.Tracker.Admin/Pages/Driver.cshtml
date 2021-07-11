@@ -1,0 +1,200 @@
+﻿@page "{pagina?}"
+@model Aisoftware.Tracker.Admin.Pages.DriverModel
+@{
+    ViewData["Title"] = "Driver";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="main-content">
+    <div class="page-header no-gutters">
+        <div class="row align-items-md-center">
+            <div class="col-md-6">
+                <div class="media m-v-10">
+                    <div class="avatar avatar-cyan avatar-icon avatar-square">
+                        <i class="anticon anticon-appstore"></i>
+                    </div>
+                    <div class="media-body m-l-15">
+                        <h2 class="mb-0" id="title-account">Motoristas</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-md-right m-v-10">
+                    <button class="btn btn-primary btn-fw" id="new-register">
+                        Novo Motorista
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+
+
+        <div class="col-lg-12 mx-auto">
+            <!-- Card View -->
+            <form method="post" asp-page-handler="Pesquisar" id="form">
+                <div class="row" id="list-view">
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" id="search" placeholder="Pesquisa" asp-for="@Model.Pesquisa">
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="submit" class="btn btn-primary btn-fw" id="btn-search">
+                            Pesquisar
+                        </button>
+                    </div>
+                    <div class="col-lg-7">
+                    </div>
+
+
+                    <div class="col-lg-2">
+                        <select asp-for="@Model.QtdRegistros" id="numRegistros" class="form-control"
+                                style="height: 40px">
+                            <option value="10" selected>10 Registros</option>
+                            <option value="25">25 Registros</option>
+                            <option value="50">50 Registros</option>
+                            <option value="100">100 Registros</option>
+                        </select>
+                    </div>
+
+                    <br /><br /><br />
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Nome</th>
+                                                <th scope="col">CPF</th>
+                                                <th scope="col">E-mail</th>
+                                                <th scope="col">Telefone</th>
+                                                <th scope="col">Data de Registro</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Opções</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table">
+                                            @{
+                                                if (Model.DriversList != null || Model.DriversList.Count > 0)
+                                                {
+                                                    foreach (var item in Model.DriversList)
+                                                    {
+                                                        <tr>
+                                                            <td>@item.Name</td>
+                                                            <td>@item.SocialNumber</td>
+                                                            <td>@item.Email</td>
+                                                            <td>@item.Cellphone</td>
+                                                            <td>@item.RegisterDate</td>
+                                                            <td>
+                                                                <div class="d-flex align-items-center">
+                                                                    @if (item.Active)
+                                                                    {<div class="badge badge-success badge-dot m-r-10"></div> }
+                                                                    else
+                                                                    { <div class="badge badge-danger badge-dot m-r-10"></div>}
+
+                                                                    @if (item.Active)
+                                                                    {<div>Ativo</div> }
+                                                                    else
+                                                                    { <div>Inativo</div>}
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <a class="btn btn-outline-primary" href="/Driver">Alterar</a>&nbsp;
+                                                                <a class="btn btn-outline-danger" href="/Driver">Excluir</a>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr><td>Nenhum registro encontrado</td></tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div id="pagination">
+                        <div class="dataTables_paginate paging_simple_numbers" id="data-table_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item previous" id="selpagant"><a href="#" aria-controls="data-table" data-dt-idx="0" tabindex="0" class="page-link">Anterior</a></li>
+
+                                @{
+                                    var totalPages = Model.DriversList.Count % Model.DriversList.Capacity;
+                                    var page = 0;
+                                    for (int i = 1; i < totalPages; i++)
+                                    {
+                                        if (i == page)
+                                        {
+                                            <li class="paginate_button page-item active" id="selpag + @i"><a href="#" aria-controls="data-table" data-dt-idx="@i" tabindex="0" class="page-link">@i</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li class="paginate_button page-item" id="selpag + @i"><a href="#" aria-controls="data-table" data-dt-idx="@i" tabindex="0" class="page-link">@i</a></li>
+                                        }
+                                    }
+
+                                    if (page < totalPages)
+                                    {
+                                        <li class="paginate_button page-item next" id="selpagprox"><a href="#" aria-controls="data-table" data-dt-idx="4" tabindex="0" class="page-link">Próxima</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>*@
+
+                <div id="pagination">
+                    <div class="dataTables_paginate paging_simple_numbers" id="data-table_paginate">
+                        <input id="paginaAtual" type="hidden" asp-for="@Model.Pagina" value="@Model.DriversList.PageNumber"/>
+                        <ul class="pagination">
+                            @if (Model.DriversList.HasPreviousPage)
+                            {
+                                var pageNumber = Model.DriversList.PageNumber - 1;
+
+                                <li class="paginate_button page-item previous" id="selpagant"><a style="cursor:pointer;" aria-controls="data-table" data-dt-idx="0" tabindex="0" class="page-link" onclick="changePage(@pageNumber)">Anterior</a></li>
+                            }
+
+                            @for (int i = 1; i <= Model.DriversList.PageCount; i++)
+                            {
+                                if (i == Model.DriversList.PageNumber)
+                                {
+                                    <li class="paginate_button page-item next active" id="@i"><a style="cursor:pointer;" aria-controls="data-table" data-dt-idx="4" tabindex="0" class="page-link" onclick="changePage(@i)">@i</a></li>
+                                }
+                                else
+                                {
+                                    <li class="paginate_button page-item next" id="@i"><a style="cursor:pointer;" aria-controls="data-table" data-dt-idx="4" tabindex="0" class="page-link" onclick="changePage(@i)">@i</a></li>
+                                }
+                            }
+
+                            @if (Model.DriversList.HasNextPage)
+                            {
+                                var pageNumber = Model.DriversList.PageNumber + 1;
+
+                                <li class="paginate_button page-item next" id="selpagprox"><a style="cursor:pointer;" aria-controls="data-table" data-dt-idx="4" tabindex="0" class="page-link" onclick="changePage(@pageNumber)">Próxima</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#numRegistros').change(function () {
+        $('#form').submit();
+    });
+
+    function changePage(pagina) {
+        debugger;
+        $('#paginaAtual').val(pagina);
+        $('#form').submit();
+    }
+</script>

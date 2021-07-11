@@ -1,0 +1,1 @@
+﻿User ID=dev;Password=Blu.102030;Host=blu.conc3xc22xi8.us-east-1.rds.amazonaws.com;Port=3306;Database=bludev;Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0;

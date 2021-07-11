@@ -1,0 +1,29 @@
+﻿@page "{returnTo?}"
+@model Aisoftware.Tracker.Admin.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<form method="post" asp-page-handler="Login" autocomplete="off">
+    <div style="" id="ancoraUsuarioLoginM"></div>
+    <div class="group" style="padding-top:20px;">
+        <label>Identificação:</label>
+        <input type="text" class="form-control input-desc" asp-for="@Model.userCompany.Email" id="usuarioLoginM" data-val="true" required placeholder="Digite seu e-mail, CPF, CNPJ ou celular com DDD..." style="font-size:15px;" autocomplete="off" onfocus="ancoraWebView('usuarioLoginM', 'linkUsuarioLoginM');" />
+        <span asp-validation-for="@Model.userCompany.Email" class="text-danger"></span>
+    </div>
+    <div style="" id="ancoraSenhaLoginM"></div>
+    <div class="group">
+        <label>Senha:</label>
+        <input type="password" class="form-control input-desc" asp-for="@Model.userCompany.Password" id="senhaLoginM" required placeholder="Digite sua senha..." style="font-size:15px;" onfocus="ancoraWebView('senhaLoginM', 'linkSenhaLoginM');" autocomplete="off" />
+        <span asp-validation-for="@Model.userCompany.Password" class="text-danger"></span>
+    </div>
+    <div class="group" style="padding-top:20px;">
+        <span class="link-esqueci-senha cadastro-link"><a href="/EsqueciSenha">Esqueci minha senha</a></span>
+    </div>
+    <div class="clear"></div>
+    <div class="group">
+        <input type="submit" class="btn-login" value="Entrar" />
+    </div>
+</form>

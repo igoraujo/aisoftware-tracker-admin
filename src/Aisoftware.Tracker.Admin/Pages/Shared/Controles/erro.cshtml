@@ -1,0 +1,21 @@
+﻿@model string
+
+@if (!string.IsNullOrEmpty(Model?.Remove(0, Model.IndexOf("|") + 1)))
+{
+    <p id="text">@(Model.Remove(0, Model.IndexOf("|") + 1))</p>
+
+    <script>
+        $(document).ready(function () {
+            @*$('#erroModalCenter@(nomemodal)').modal('show');*@
+
+            console.log($('#text').text());
+
+            Swal.fire({
+                title: '@(Model.Remove(Model.IndexOf("|")))',
+                text: $('#text').text(),
+                icon: 'error',
+                confirmButtonText: 'Fechar'
+            })
+        });
+    </script>
+}
