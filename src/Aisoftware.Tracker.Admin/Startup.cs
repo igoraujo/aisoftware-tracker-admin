@@ -38,7 +38,9 @@ namespace Aisoftware.Tracker.Admin
             //services.AddEntityFrameworkNpgsql().AddDbContext<ApplicationDbContext>(options =>
             //    options.UseNpgsql(Configuration.GetConnectionString("ConnectionString")));
 
-            services.AddScoped<Aisoftware.Tracker.UseCases.Handlers.HandlerFactory, Aisoftware.Tracker.UseCases.Handlers.HandlerFactory>();
+            services.AddDbContext<ApplicationDbContext>();
+
+            services.AddScoped<HandlerFactory, Aisoftware.Tracker.UseCases.Handlers.HandlerFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,7 +9,7 @@ using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 using X.PagedList;
 
-namespace Aisoftware.Tracker.Admin.Views
+namespace Aisoftware.Tracker.Admin.Pages
 {
     public class DriverModel : AisoftwareTrackerPageModel
     {

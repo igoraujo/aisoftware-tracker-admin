@@ -8,7 +8,7 @@ using Aisoftware.Tracker.Models.ViewModels;
 using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 
-namespace Aisoftware.Tracker.Admin.Views
+namespace Aisoftware.Tracker.Admin.Pages
 {
     public class DashboardModel : AisoftwareTrackerPageModel
     {
