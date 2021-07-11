@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Aisoftware.Tracker.Admin.Pages;
+using Aisoftware.Tracker.Admin.Views;
 using Aisoftware.Tracker.UseCases.Handlers;
 using System;
 using System.Threading.Tasks;

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 
-namespace Aisoftware.Tracker.Admin.Pages
+namespace Aisoftware.Tracker.Admin.Views
 {
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : AisoftwareTrackerPageModel
@@ -20,7 +20,7 @@ namespace Aisoftware.Tracker.Admin.Pages
             var exceptionHandlerPathFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
             var erro = exceptionHandlerPathFeature.Error;
 
-            if (erro.GetType() == typeof(Aisoftware.Tracker.Admin.Pages.UsuarioNaoLogadoException))
+            if (erro.GetType() == typeof(Aisoftware.Tracker.Admin.Views.UsuarioNaoLogadoException))
                 return Redirect("/Login/" + erro.Message);
 
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;

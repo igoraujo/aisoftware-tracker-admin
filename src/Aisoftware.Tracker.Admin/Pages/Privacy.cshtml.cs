@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 
-namespace Aisoftware.Tracker.Admin.Pages
+namespace Aisoftware.Tracker.Admin.Views
 {
     public class PrivacyModel : AisoftwareTrackerPageModel
     {
