@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Aisoftware.Tracker.Models;
-using Aisoftware.Tracker.Admin.Code;
+using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 using X.PagedList;
 
 namespace Aisoftware.Tracker.Admin.Pages
 {
-    public class DriverModel : MoviyPageModel
+    public class DriverModel : AisoftwareTrackerPageModel
     {
         public DriverModel(HandlerFactory handlerFactory) : base(handlerFactory) { }
-        protected override bool AreaLogada() => true;
+        protected override bool LoggedArea() => true;
 
         public IPagedList<Driver> DriversList { get; set; }
         

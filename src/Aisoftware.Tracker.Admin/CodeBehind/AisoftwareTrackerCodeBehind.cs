@@ -6,16 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Aisoftware.Tracker.Admin.Code
+namespace Aisoftware.Tracker.Admin.CodeBehind
 {
-    public class MoviyCode
+    public class AisoftwareTrackerCodeBehind
     {
         public Auth Auth;
         private HttpRequest _request;
         private HttpResponse _response;
         private HandlerFactory _handlerFactory;
 
-        public MoviyCode(HttpRequest request, HttpResponse response, HandlerFactory handlerFactory)
+        public AisoftwareTrackerCodeBehind(HttpRequest request, HttpResponse response, HandlerFactory handlerFactory)
         {
             _request = request;
             _response = response;

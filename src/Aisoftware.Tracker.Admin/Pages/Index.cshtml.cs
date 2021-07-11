@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Aisoftware.Tracker.Models;
-using Aisoftware.Tracker.Admin.Code;
+using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 
 namespace Aisoftware.Tracker.Admin.Pages
 {
-    public class IndexModel : MoviyPageModel
+    public class IndexModel : AisoftwareTrackerPageModel
     {
         public IndexModel(HandlerFactory handlerFactory) : base(handlerFactory) { }
         
-        protected override bool AreaLogada() => false;
+        protected override bool LoggedArea() => false;
 
         [BindProperty]
         public UserCompany userCompany { get; set; }
@@ -33,7 +33,7 @@ namespace Aisoftware.Tracker.Admin.Pages
             {
                 try
                 {
-                    if (MoviyCode.Auth.EstaLogado())
+                    if (MoviyCode.Auth.IsLogged())
                         return Redirect("Dashboard");
                 }
                 catch (Exception ex) { }

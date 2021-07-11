@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Aisoftware.Tracker.Admin.Code
+namespace Aisoftware.Tracker.Admin.CodeBehind
 {
     public class Auth
     {
-        private MoviyCode _moviyCode;
+        private AisoftwareTrackerCodeBehind _moviyCode;
         private HandlerFactory _handlerFactory;
 
-        public Auth(MoviyCode moviyCode, HandlerFactory handlerFactory)
+        public Auth(AisoftwareTrackerCodeBehind moviyCode, HandlerFactory handlerFactory)
         {
             _moviyCode = moviyCode;
             _handlerFactory = handlerFactory;
@@ -20,7 +20,7 @@ namespace Aisoftware.Tracker.Admin.Code
 
         public string _login = string.Empty;
 
-        public bool EstaLogado()
+        public bool IsLogged()
         {
             return !string.IsNullOrEmpty(tokenmoviy);
         }

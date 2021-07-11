@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Aisoftware.Tracker.Models;
 using Aisoftware.Tracker.UseCases;
 using Aisoftware.Tracker.UseCases.Handlers;
@@ -38,8 +37,6 @@ namespace Aisoftware.Tracker.Admin
 
             //services.AddEntityFrameworkNpgsql().AddDbContext<ApplicationDbContext>(options =>
             //    options.UseNpgsql(Configuration.GetConnectionString("ConnectionString")));
-
-            services.AddDbContext<ApplicationDbContext>();
 
             services.AddScoped<Aisoftware.Tracker.UseCases.Handlers.HandlerFactory, Aisoftware.Tracker.UseCases.Handlers.HandlerFactory>();
         }

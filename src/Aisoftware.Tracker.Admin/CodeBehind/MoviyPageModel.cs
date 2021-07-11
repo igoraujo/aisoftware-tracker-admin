@@ -5,20 +5,20 @@ using Aisoftware.Tracker.UseCases.Handlers;
 using System;
 using System.Threading.Tasks;
 
-namespace Aisoftware.Tracker.Admin.Code
+namespace Aisoftware.Tracker.Admin.CodeBehind
 {
-    public abstract class MoviyPageModel : PageModel
+    public abstract class AisoftwareTrackerPageModel : PageModel
     {
         public readonly HandlerFactory HandlerFactory;
         private bool _paginaDeError;
 
-        public MoviyPageModel(HandlerFactory handlerFactory, bool paginaDeError = false) : base()
+        public AisoftwareTrackerPageModel(HandlerFactory handlerFactory, bool paginaDeError = false) : base()
         {
             HandlerFactory = handlerFactory;
             _paginaDeError = paginaDeError;
         }
 
-        protected abstract bool AreaLogada();
+        protected abstract bool LoggedArea();
 
         public override void OnPageHandlerSelected(PageHandlerSelectedContext context)
         {
@@ -27,7 +27,7 @@ namespace Aisoftware.Tracker.Admin.Code
             if (HandlerFactory != null)
                 HandlerFactory.UserIP = UserIP;
 
-            if (AreaLogada() && !MoviyCode.Auth.EstaLogado())
+            if (LoggedArea() && !MoviyCode.Auth.IsLogged())
             {
                 var path = Request.Path.ToString();
                 if (path.StartsWith(@"\") || path.StartsWith(@"/"))
@@ -56,14 +56,14 @@ namespace Aisoftware.Tracker.Admin.Code
             base.OnPageHandlerExecuted(context);
         }
 
-        private MoviyCode _MoviyCode;
-        public MoviyCode MoviyCode
+        private AisoftwareTrackerCodeBehind _MoviyCode;
+        public AisoftwareTrackerCodeBehind MoviyCode
         {
             get
             {
                 if (_MoviyCode == null)
                 {
-                    _MoviyCode = new MoviyCode(this.Request, this.Response, HandlerFactory);
+                    _MoviyCode = new AisoftwareTrackerCodeBehind(this.Request, this.Response, HandlerFactory);
                 }
                 return _MoviyCode;
             }

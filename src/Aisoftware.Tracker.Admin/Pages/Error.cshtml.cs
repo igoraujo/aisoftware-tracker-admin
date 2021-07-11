@@ -2,13 +2,13 @@ using System;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Aisoftware.Tracker.Admin.Code;
+using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 
 namespace Aisoftware.Tracker.Admin.Pages
 {
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public class ErrorModel : MoviyPageModel
+    public class ErrorModel : AisoftwareTrackerPageModel
     {
         public ErrorModel(HandlerFactory handlerFactory) : base(handlerFactory, true)
         { }
@@ -27,7 +27,7 @@ namespace Aisoftware.Tracker.Admin.Pages
 
             return Page();
         }
-        protected override bool AreaLogada() => false;
+        protected override bool LoggedArea() => false;
     }
 
 

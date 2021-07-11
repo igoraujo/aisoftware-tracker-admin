@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Aisoftware.Tracker.Models.ViewModels;
-using Aisoftware.Tracker.Admin.Code;
+using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
 
 namespace Aisoftware.Tracker.Admin.Pages
 {
-    public class DashboardModel : MoviyPageModel
+    public class DashboardModel : AisoftwareTrackerPageModel
     {
         public DashboardModel(HandlerFactory handlerFactory) : base(handlerFactory) { }
-        protected override bool AreaLogada() => true;
+        protected override bool LoggedArea() => true;
 
         public int PassagensDia { get; set; }
         public int UsuariosDia { get; set; }
