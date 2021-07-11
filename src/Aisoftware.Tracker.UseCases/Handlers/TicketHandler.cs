@@ -19,17 +19,7 @@ namespace Aisoftware.Tracker.UseCases.Handlers
         {
             try
             {
-                var query = Environment.NewLine + "select count(tp.id) as totalticketssold " +
-                                                           Environment.NewLine + "from travel as t " +
-                                                           Environment.NewLine + "inner join travelpassenger as tp on tp.travelid = t.id " +
-                                                           Environment.NewLine + "where starttime " +
-                                                           Environment.NewLine + $"between timestamp '2020-06-27' + interval '00:00:00 hours' " +
-                                                           Environment.NewLine + $"and timestamp '2020-06-27' + interval ' 23:59:59.999999 hours' ";
-                                                           //Deixei a data fixa pois se usar o datetime.now o valor vai ser zero por não ter passagens vendidas no dia atual
-
-                var soldTicketsPerDay = _context.ExecuteScalar(query);
-
-                return Convert.ToInt32(soldTicketsPerDay);
+                return 1;
             }
             catch (Exception ex)
             {

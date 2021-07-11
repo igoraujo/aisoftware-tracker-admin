@@ -10,7 +10,7 @@ namespace Aisoftware.Tracker.Admin.Code
 {
     public class MoviyCode
     {
-        public Identidade Identidade;
+        public Auth Auth;
         private HttpRequest _request;
         private HttpResponse _response;
         private HandlerFactory _handlerFactory;
@@ -21,7 +21,7 @@ namespace Aisoftware.Tracker.Admin.Code
             _response = response;
             _handlerFactory = handlerFactory;
 
-            Identidade = new Identidade(this, handlerFactory);
+            Auth = new Auth(this, handlerFactory);
         }
 
         private Dictionary<string, string> _valores = new Dictionary<string, string>();

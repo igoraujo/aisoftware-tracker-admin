@@ -20,12 +20,7 @@ namespace Aisoftware.Tracker.UseCases.Handlers
         {
             try
             {
-                pesquisa = string.IsNullOrEmpty(pesquisa) ? string.Empty : pesquisa;
-
-                var driversList = _context.driver.Where(d => d.CompanyID == companyID && (d.Name.ToLower().Contains(pesquisa.Trim().ToLower()) || d.SocialNumber.ToLower().Contains(pesquisa.Trim().ToLower())))
-                    .OrderBy(d => d.Name).ToPagedList(pagina == 0 ? 1 : pagina, qtdRegisters == 0 ? 10 : qtdRegisters);
-
-                return driversList;
+               return null;
             }
             catch (Exception ex)
             {

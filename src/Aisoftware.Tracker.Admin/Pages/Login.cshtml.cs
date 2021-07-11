@@ -26,14 +26,14 @@ namespace Aisoftware.Tracker.Admin.Pages
         {
             if (returnTo?.ToLower() == "logout")
             {
-                MoviyCode.Identidade.DeslogarUsuario();
+                MoviyCode.Auth.Logoff();
                 return Page();
             }
             else
             {
                 try
                 {
-                    if (MoviyCode.Identidade.EstaLogado())
+                    if (MoviyCode.Auth.EstaLogado())
                         return Redirect("Dashboard");
                 }
                 catch (Exception ex) { }
@@ -46,7 +46,7 @@ namespace Aisoftware.Tracker.Admin.Pages
         {
             try
             {
-                if (await MoviyCode.Identidade.LogarUsuario(Request.HttpContext.Connection.RemoteIpAddress.ToString(), userCompany.Email, userCompany.Password, Lembrardemim))
+                if (await MoviyCode.Auth.Login(Request.HttpContext.Connection.RemoteIpAddress.ToString(), userCompany.Email, userCompany.Password, Lembrardemim))
                 {
                     return Redirect("Dashboard");
                 }

@@ -27,7 +27,7 @@ namespace Aisoftware.Tracker.Admin.Code
             if (HandlerFactory != null)
                 HandlerFactory.UserIP = UserIP;
 
-            if (AreaLogada() && !MoviyCode.Identidade.EstaLogado())
+            if (AreaLogada() && !MoviyCode.Auth.EstaLogado())
             {
                 var path = Request.Path.ToString();
                 if (path.StartsWith(@"\") || path.StartsWith(@"/"))

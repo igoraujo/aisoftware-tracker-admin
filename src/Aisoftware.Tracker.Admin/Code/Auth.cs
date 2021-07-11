@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Aisoftware.Tracker.Admin.Code
 {
-    public class Identidade
+    public class Auth
     {
         private MoviyCode _moviyCode;
         private HandlerFactory _handlerFactory;
 
-        public Identidade(MoviyCode moviyCode, HandlerFactory handlerFactory)
+        public Auth(MoviyCode moviyCode, HandlerFactory handlerFactory)
         {
             _moviyCode = moviyCode;
             _handlerFactory = handlerFactory;
         }
 
-        public string Login = string.Empty;
+        public string _login = string.Empty;
 
         public bool EstaLogado()
         {
@@ -39,13 +39,13 @@ namespace Aisoftware.Tracker.Admin.Code
             }
         }
 
-        public async Task<bool> LogarUsuario(string ip, string usuario, string senha, bool lembrardemim)
+        public async Task<bool> Login(string ip, string usuario, string senha, bool lembrardemim)
         {
             var loguei = _handlerFactory.UserCompany.Logar(usuario, senha);
             if (loguei != null)
             {
                 tokenremember = lembrardemim; //Colocar esse primeiro, pq os proximos usam esse valor
-                Login = loguei.Email;
+                _login = loguei.Email;
                 tokenmoviy = loguei.Token.ToString();
                 _userCompany = loguei;
                 return true;
@@ -54,12 +54,12 @@ namespace Aisoftware.Tracker.Admin.Code
                 return false;
         }
 
-        public void DeslogarUsuario()
+        public void Logoff()
         {
             _userCompany = null;
             tokenremember = false;
             tokenmoviy = null;
-            Login = string.Empty;
+            _login = string.Empty;
         }
 
         public bool tokenremember

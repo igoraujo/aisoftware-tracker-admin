@@ -16,7 +16,7 @@ namespace Aisoftware.Tracker.UseCases.Handlers
         {
             try
             {
-                return _context.balance.AsNoTracking().Where(x => x.ID == id).FirstOrDefault();
+                return new Balance();
             }
             catch (Exception)
             {
