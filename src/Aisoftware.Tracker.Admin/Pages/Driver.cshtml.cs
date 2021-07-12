@@ -29,12 +29,12 @@ namespace Aisoftware.Tracker.Admin.Pages
 
         public void OnGet()
         {
-            DriversList = HandlerFactory.Driver.GetAll(MoviyCode.Auth.UsuarioLogado.CompanyID, 1, 10);
+            DriversList = HandlerFactory.Driver.GetAll(MoviyCode.Auth.UsuarioLogado.CompanyId, 1, 10);
         }
 
         public void OnPostPesquisar()
         {
-            DriversList = HandlerFactory.Driver.GetAll(MoviyCode.Auth.UsuarioLogado.CompanyID, Convert.ToInt32(Pagina), Convert.ToInt32(QtdRegistros), Pesquisa);
+            DriversList = HandlerFactory.Driver.GetAll(MoviyCode.Auth.UsuarioLogado.CompanyId, Convert.ToInt32(Pagina), Convert.ToInt32(QtdRegistros), Pesquisa);
         }
     }
 }

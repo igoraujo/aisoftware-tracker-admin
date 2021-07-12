@@ -29,29 +29,29 @@ namespace Aisoftware.Tracker.Admin.CodeBehind
             return !string.IsNullOrEmpty(Token);
         }
 
-        private UserCompany _userCompany = null;
+        private User _user = null;
 
-        public UserCompany UsuarioLogado
+        public User UsuarioLogado
         {
             get
             {
-                if (_userCompany == null && Token != Guid.Empty.ToString())
+                if (_user == null && Token != Guid.Empty.ToString())
                 {
-                    _userCompany = _handlerFactory.UserCompany.GetByToken(Token);
+                    _user = _handlerFactory.User.GetByToken(Token);
                 }
-                return _userCompany;
+                return _user;
             }
         }
 
         public async Task<bool> Login(string ip, string user, string password, bool isRemember)
         {
-            var loguei = _handlerFactory.UserCompany.Logar(user, password);
+            var loguei = _handlerFactory.User.Logar(user, password);
             if (loguei != null)
             {
                 TokenRemember = isRemember; //Colocar esse primeiro, pq os proximos usam esse valor
                 _login = loguei.Email;
                 Token = loguei.Token.ToString();
-                _userCompany = loguei;
+                _user = loguei;
                 return true;
             }
             else
@@ -60,7 +60,7 @@ namespace Aisoftware.Tracker.Admin.CodeBehind
 
         public void Logoff()
         {
-            _userCompany = null;
+            _user = null;
             TokenRemember = false;
             Token = null;
             _login = string.Empty;

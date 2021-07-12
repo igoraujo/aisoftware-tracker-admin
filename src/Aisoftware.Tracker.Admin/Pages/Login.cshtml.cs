@@ -17,10 +17,10 @@ namespace Aisoftware.Tracker.Admin.Pages
         protected override bool LoggedArea() => false;
 
         [BindProperty]
-        public UserCompany userCompany { get; set; }
+        public User userCompany { get; set; }
         
         [BindProperty]
-        public bool Lembrardemim { get; set; }
+        public bool IsRemember { get; set; }
 
         public IActionResult OnGet(string returnTo)
         {
@@ -46,7 +46,7 @@ namespace Aisoftware.Tracker.Admin.Pages
         {
             try
             {
-                if (await MoviyCode.Auth.Login(Request.HttpContext.Connection.RemoteIpAddress.ToString(), userCompany.Email, userCompany.Password, Lembrardemim))
+                if (await MoviyCode.Auth.Login(Request.HttpContext.Connection.RemoteIpAddress.ToString(), userCompany.Email, userCompany.Password, IsRemember))
                 {
                     return Redirect("Dashboard");
                 }

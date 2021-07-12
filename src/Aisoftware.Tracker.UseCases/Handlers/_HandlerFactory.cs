@@ -64,7 +64,7 @@ namespace Aisoftware.Tracker.UseCases.Handlers
         public TravelHandler Travel => _travel ?? (_travel = new TravelHandler(_context, _config, this));
 
         private UserCompanyHandler _userCompany;
-        public UserCompanyHandler UserCompany => _userCompany ?? (_userCompany = new UserCompanyHandler(_context, _config, this));
+        public UserCompanyHandler User => _userCompany ?? (_userCompany = new UserCompanyHandler(_context, _config, this));
 
         public void Dispose()
         {

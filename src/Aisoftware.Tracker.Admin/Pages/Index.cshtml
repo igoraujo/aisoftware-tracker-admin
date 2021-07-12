@@ -17,8 +17,8 @@
             <div class="input-affix">
                 <i class="prefix-icon anticon anticon-user"></i>
                 <input type="email" class="form-control" id="username"
-                       placeholder="Usuário" required asp-for="@Model.userCompany.Email">
-                <span asp-validation-for="@Model.userCompany.Email" class="text-danger"></span>
+                       placeholder="Usuário" required asp-for="@Model.User.Email">
+                <span asp-validation-for="@Model.user.Email" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
@@ -27,15 +27,15 @@
             <div class="input-affix m-b-10">
                 <i class="prefix-icon anticon anticon-lock"></i>
                 <input type="password" class="form-control" id="password"
-                       placeholder="Senha" required asp-for="@Model.userCompany.Password">
-                <span asp-validation-for="@Model.userCompany.Password" class="text-danger"></span>
+                       placeholder="Senha" required asp-for="@Model.user.Password">
+                <span asp-validation-for="@Model.user.Password" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
             <div class="d-flex align-items-center justify-content-between">
                 <span class="font-size-13 text-muted">
                     <div class="checkbox">
-                        <input id="remember" type="checkbox" checked="" asp-for="@Model.Lembrardemim">
+                        <input id="remember" type="checkbox" checked="" asp-for="@Model.IsRemember">
                         <label for="remember">Lembre-se</label>
                     </div>
                 </span>

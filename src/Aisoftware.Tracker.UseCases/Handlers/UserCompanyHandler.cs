@@ -11,11 +11,11 @@ using Server.Tools;
 
 namespace Aisoftware.Tracker.UseCases.Handlers
 {
-    public class UserCompanyHandler : BaseHandler<UserCompany>
+    public class UserCompanyHandler : BaseHandler<User>
     {
         public UserCompanyHandler(ApplicationDbContext context, IOptions<Config> config, HandlerFactory handlerFactory) : base(context, config, handlerFactory, context.usercompany) { }
 
-        public bool Atualizar(UserCompany userCompany)
+        public bool Atualizar(User userCompany)
         {
             try
             {
@@ -30,11 +30,11 @@ namespace Aisoftware.Tracker.UseCases.Handlers
             }
         }
 
-        public UserCompany Get(string id)
+        public User Get(string id)
         {
             try
             {
-                return _context.usercompany.AsNoTracking().Where(x => x.ID == id).FirstOrDefault();
+                return _context.usercompany.AsNoTracking().Where(x => x.Id == id).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -42,7 +42,7 @@ namespace Aisoftware.Tracker.UseCases.Handlers
             }
         }
 
-        public UserCompany GetByToken(string token)
+        public User GetByToken(string token)
         {
             try
             {
@@ -54,7 +54,7 @@ namespace Aisoftware.Tracker.UseCases.Handlers
             }
         }
 
-        public UserCompany Logar(string email, string senha)
+        public User Logar(string email, string senha)
         {
             try
             {

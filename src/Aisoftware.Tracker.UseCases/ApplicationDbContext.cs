@@ -60,7 +60,7 @@ namespace Aisoftware.Tracker.UseCases
         public DbSet<TicketHistory> tickethistory { get; set; }
         public DbSet<Travel> travel { get; set; }
         public DbSet<TravelPassenger> travelpassenger { get; set; }
-        public DbSet<UserCompany> usercompany { get; set; }
+        public DbSet<User> usercompany { get; set; }
         public DbSet<UserCompanyHistory> usercompanyhistory { get; set; }
         #endregion
 
@@ -192,9 +192,9 @@ namespace Aisoftware.Tracker.UseCases
                 entity.HasKey(e => e.ID);
             });
 
-            modelBuilder.Entity<UserCompany>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(e => e.ID);
+                entity.HasKey(e => e.Id);
             });
 
             modelBuilder.Entity<UserCompanyHistory>(entity =>
