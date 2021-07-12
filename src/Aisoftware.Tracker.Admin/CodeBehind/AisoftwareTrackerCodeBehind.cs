@@ -3,8 +3,6 @@ using Aisoftware.Tracker.Borders;
 using Aisoftware.Tracker.UseCases.Handlers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Aisoftware.Tracker.Admin.CodeBehind
 {
@@ -14,6 +12,14 @@ namespace Aisoftware.Tracker.Admin.CodeBehind
         private HttpRequest _request;
         private HttpResponse _response;
         private HandlerFactory _handlerFactory;
+
+        private readonly string ERROR_MESSAGE = "ErrorMessage";
+        private readonly string WARNING_MESSAGE = "WarningMessage";
+        private readonly string SUCCESS_MESSAGE = "SuccessMessage";
+        private readonly string USER_AGENT = "User-Agent";
+        private readonly int ONE_THOUSAND = 1000;
+        private const string JS_CSS_VERSION = "v1.0.3.0";
+        
 
         public AisoftwareTrackerCodeBehind(HttpRequest request, HttpResponse response, HandlerFactory handlerFactory)
         {
@@ -28,7 +34,7 @@ namespace Aisoftware.Tracker.Admin.CodeBehind
 
         public void SaveValue(string key, object value, int? daysToExpire)
         {
-            value = value?.ToString() + "";
+            value = value?.ToString() + string.Empty;
 
             _response.Cookies.Delete(key);
 
@@ -41,7 +47,9 @@ namespace Aisoftware.Tracker.Admin.CodeBehind
                 options.Expires = DateTime.Now.AddDays(daysToExpire.Value);
             }
             else
-                options.Expires = DateTime.Now.AddDays(1000);
+            {
+                options.Expires = DateTime.Now.AddDays(ONE_THOUSAND);
+            }
 
             _response.Cookies.Append(key, value.ToString(), options);
 
@@ -61,55 +69,51 @@ namespace Aisoftware.Tracker.Admin.CodeBehind
 
         public void AdicionaErro(string msg)
         {
-            SaveValue("ErrorMessage", msg, null);
+            SaveValue(ERROR_MESSAGE, msg, null);
         }
 
         public string GetErro()
         {
-            return GetValueAndErase("ErrorMessage");
+            return GetValueAndErase(ERROR_MESSAGE);
         }
 
         public void AdicionaWarning(string msg)
         {
-            SaveValue("WarningMessage", msg, null);
+            SaveValue(WARNING_MESSAGE, msg, null);
         }
 
         public string GetWarning()
         {
-            return GetValueAndErase("WarningMessage");
+            return GetValueAndErase(WARNING_MESSAGE);
         }
 
         public void AdicionaSuccess(string msg)
         {
-            SaveValue("SuccessMessage", msg, null);
+            SaveValue(SUCCESS_MESSAGE, msg, null);
         }
 
         public string GetSuccess()
         {
-            return GetValueAndErase("SuccessMessage");
+            return GetValueAndErase(SUCCESS_MESSAGE);
         }
 
         public string GetValueAndErase(string key)
         {
-            string ret;
-            if (_valores.ContainsKey(key))
-                ret = _valores[key];
-            else
-                ret = _request.Cookies[key];
+            string response = _valores.ContainsKey(key) ? _valores[key] : _request.Cookies[key];
 
             _valores.Remove(key);
             _response.Cookies.Delete(key);
-            return ret;
+            return response;
         }
 
         public string GetBrowser()
         {
-            return _request.Headers["User-Agent"];
+            return _request.Headers[USER_AGENT];
         }
 
         public static string JsCssVersion()
         {
-            return "v1.0.3.0";
+            return JS_CSS_VERSION;
         }
     }
 }
