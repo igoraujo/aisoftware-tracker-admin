@@ -60,8 +60,8 @@ namespace Aisoftware.Tracker.UseCases
         public DbSet<TicketHistory> tickethistory { get; set; }
         public DbSet<Travel> travel { get; set; }
         public DbSet<TravelPassenger> travelpassenger { get; set; }
-        public DbSet<User> usercompany { get; set; }
-        public DbSet<UserCompanyHistory> usercompanyhistory { get; set; }
+        public DbSet<User> user { get; set; }
+        public DbSet<UserHistory> userHistory { get; set; }
         #endregion
 
         #region Sem relação com entidades do banco
@@ -197,7 +197,7 @@ namespace Aisoftware.Tracker.UseCases
                 entity.HasKey(e => e.Id);
             });
 
-            modelBuilder.Entity<UserCompanyHistory>(entity =>
+            modelBuilder.Entity<UserHistory>(entity =>
             {
                 entity.HasKey(e => e.ID);
             });
