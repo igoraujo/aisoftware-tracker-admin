@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Aisoftware.Tracker.Borders
 {
-    public class UserCompanyHistory
+    public class UserHistory
     {
         public Guid ID { get; set; }
         public Guid CompanyID { get; set; }
