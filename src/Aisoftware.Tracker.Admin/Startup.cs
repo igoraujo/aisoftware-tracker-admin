@@ -38,8 +38,6 @@ namespace Aisoftware.Tracker.Admin
             //services.AddEntityFrameworkNpgsql().AddDbContext<ApplicationDbContext>(options =>
             //    options.UseNpgsql(Configuration.GetConnectionString("ConnectionString")));
 
-            services.AddDbContext<ApplicationDbContext>();
-
             services.AddScoped<HandlerFactory, Aisoftware.Tracker.UseCases.Handlers.HandlerFactory>();
         }
 

@@ -7,10 +7,11 @@ namespace Aisoftware.Tracker.Borders.Users.Requests
     
     public class UserRequest
     {
-        private string name;
         private string email;
     
-        public string Name { get => name; set => name = value; }
+        private string password;
+
         public string Email { get => email; set => email = value; }
+        public string Password { get => password; set => password = value; }
     }
 }
