@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{552EB17A-0D8C-4161-879A-9D31F90A7C86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aisoftware.Tracker.Admin", "src\Aisoftware.Tracker.Admin\Aisoftware.Tracker.Admin.csproj", "{4D1C4FC2-C9CE-4CA0-B3B4-F60281D502E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aisoftware.Tracker.Admin", "src\Aisoftware.Tracker.Admin\Aisoftware.Tracker.Admin.csproj", "{4D1C4FC2-C9CE-4CA0-B3B4-F60281D502E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aisoftware.Tracker.UseCases", "src\Aisoftware.Tracker.UseCases\Aisoftware.Tracker.UseCases.csproj", "{BDAD0C36-8CB3-41BF-9718-0F2B73D7ACA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aisoftware.Tracker.UseCases", "src\Aisoftware.Tracker.UseCases\Aisoftware.Tracker.UseCases.csproj", "{BDAD0C36-8CB3-41BF-9718-0F2B73D7ACA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aisoftware.Tracker.Bordes", "src\Aisoftware.Tracker.Borders\Aisoftware.Tracker.Bordes.csproj", "{D65D0293-729F-46C5-BDAB-7257CD892D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aisoftware.Tracker.Borders", "src\Aisoftware.Tracker.Borders\Aisoftware.Tracker.Borders.csproj", "{D65D0293-729F-46C5-BDAB-7257CD892D74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4D1C4FC2-C9CE-4CA0-B3B4-F60281D502E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -61,9 +58,15 @@ Global
 		{D65D0293-729F-46C5-BDAB-7257CD892D74}.Release|x86.ActiveCfg = Release|Any CPU
 		{D65D0293-729F-46C5-BDAB-7257CD892D74}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4D1C4FC2-C9CE-4CA0-B3B4-F60281D502E3} = {552EB17A-0D8C-4161-879A-9D31F90A7C86}
 		{BDAD0C36-8CB3-41BF-9718-0F2B73D7ACA7} = {552EB17A-0D8C-4161-879A-9D31F90A7C86}
 		{D65D0293-729F-46C5-BDAB-7257CD892D74} = {552EB17A-0D8C-4161-879A-9D31F90A7C86}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3005FD74-ABE9-41F2-9405-C34E0E5C221F}
 	EndGlobalSection
 EndGlobal

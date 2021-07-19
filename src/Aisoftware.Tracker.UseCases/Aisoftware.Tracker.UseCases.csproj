@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aisoftware.Tracker.Borders\Aisoftware.Tracker.Bordes.csproj" />
+    <ProjectReference Include="..\Aisoftware.Tracker.Borders\Aisoftware.Tracker.Borders.csproj" />
   </ItemGroup>
 
 </Project>
