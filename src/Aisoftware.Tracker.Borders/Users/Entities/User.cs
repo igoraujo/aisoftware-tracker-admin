@@ -28,7 +28,7 @@ namespace Aisoftware.Tracker.Borders.Users.Entities
     /// attributes: object
     /// </summary>
     
-    public class UserDTO
+    public class User
     {
         private int id;
         private string name;

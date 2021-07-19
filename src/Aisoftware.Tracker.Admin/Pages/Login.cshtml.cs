@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Aisoftware.Tracker.Borders;
 using Aisoftware.Tracker.Admin.CodeBehind;
 using Aisoftware.Tracker.UseCases.Handlers;
+using Aisoftware.Tracker.Borders.Users.Entities;
 
 namespace Aisoftware.Tracker.Admin.Pages
 {
