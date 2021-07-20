@@ -15,8 +15,6 @@ namespace Aisoftware.Tracker.Admin.Pages
     {
         public DriverModel(HandlerFactory handlerFactory) : base(handlerFactory) { }
         protected override bool LoggedArea() => true;
-
-        public IPagedList<Driver> DriversList { get; set; }
         
         [BindProperty]
         public string Pesquisa { get; set; }
@@ -29,12 +27,12 @@ namespace Aisoftware.Tracker.Admin.Pages
 
         public void OnGet()
         {
-            DriversList = HandlerFactory.Driver.GetAll(MoviyCode.Auth.UsuarioLogado.CompanyId, 1, 10);
+            
         }
 
         public void OnPostPesquisar()
         {
-            DriversList = HandlerFactory.Driver.GetAll(MoviyCode.Auth.UsuarioLogado.CompanyId, Convert.ToInt32(Pagina), Convert.ToInt32(QtdRegistros), Pesquisa);
+           
         }
     }
 }

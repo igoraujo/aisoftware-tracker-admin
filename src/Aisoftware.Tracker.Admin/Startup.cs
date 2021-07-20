@@ -12,6 +12,10 @@ using Aisoftware.Tracker.Borders;
 using Aisoftware.Tracker.UseCases;
 using Aisoftware.Tracker.UseCases.Handlers;
 using System.Globalization;
+using Aisoftware.Tracker.UseCases.Login.Interfaces;
+using Aisoftware.Tracker.UseCases.Login.UseCases;
+using Aisoftware.Tracker.Repositories.Login.Interfaces;
+using Aisoftware.Tracker.Repositories.Login.Repositories;
 
 namespace Aisoftware.Tracker.Admin
 {
@@ -39,6 +43,10 @@ namespace Aisoftware.Tracker.Admin
             //    options.UseNpgsql(Configuration.GetConnectionString("ConnectionString")));
 
             services.AddScoped<HandlerFactory, Aisoftware.Tracker.UseCases.Handlers.HandlerFactory>();
+            
+            services.AddScoped<ILoginUseCase, LoginUseCase>();
+            services.AddScoped<ILoginRepository, LoginRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

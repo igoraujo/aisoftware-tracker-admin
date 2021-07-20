@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aisoftware.Tracker.Borders\Aisoftware.Tracker.Borders.csproj" />
     <ProjectReference Include="..\Aisoftware.Tracker.UseCases\Aisoftware.Tracker.UseCases.csproj" />
+    <ProjectReference Include="..\Aisoftware.Tracker.Borders\Aisoftware.Tracker.Borders.csproj" />
   </ItemGroup>
 
 </Project>

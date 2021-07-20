@@ -1,6 +1,7 @@
 ﻿using Aisoftware.Tracker.Borders;
 using Aisoftware.Tracker.Borders.Users.DTO;
 using Aisoftware.Tracker.Borders.Users.Requests;
+using Aisoftware.Tracker.Repositories.Login.Repositories;
 using Aisoftware.Tracker.UseCases.Handlers;
 using Aisoftware.Tracker.UseCases.Login.Interfaces;
 using Aisoftware.Tracker.UseCases.Login.UseCases;
@@ -25,7 +26,8 @@ namespace Aisoftware.Tracker.Admin.CodeBehind
         {
             _moviyCode = moviyCode;
             _handlerFactory = handlerFactory;
-            _login = new LoginUseCase();
+            ///TODO Corrigir
+            _login = new LoginUseCase(new LoginRepository());
         }
 
         public string login = string.Empty;

@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aisoftware.Tracker.Borders.Users.Entities
 {
@@ -34,8 +33,6 @@ namespace Aisoftware.Tracker.Borders.Users.Entities
         private string name;
         private string email;
         private string phone;
-
-        [Column("readonly")]
         private bool _readonly;
         private bool administrator;
         private string map;
