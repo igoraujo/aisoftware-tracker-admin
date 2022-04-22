@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'aisoftware-tracker-admin'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_31D6B3DDFB0F4D3592A5744D92A54038 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_948D8A25127D42ADA67F8007AF6AF64B }}
           package: .
